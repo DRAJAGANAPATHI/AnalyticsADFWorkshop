@@ -90,10 +90,7 @@
 							"userProperties": [],
 							"typeProperties": {
 								"variableName": "container",
-								"value": {
-									"value": "@substring(item().Path, 0, indexof(item().Path, item().BlobName))",
-									"type": "Expression"
-								}
+								"value": "@substring(item().Path, 0, indexof(item().Path, item().BlobName))"
 							}
 						},
 						{
