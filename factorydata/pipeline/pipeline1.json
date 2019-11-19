@@ -48,6 +48,7 @@
 							"name": "Set Blob Path",
 							"type": "SetVariable",
 							"dependsOn": [],
+							"userProperties": [],
 							"typeProperties": {
 								"variableName": "blobPath",
 								"value": {
@@ -116,13 +117,51 @@
 							"userProperties": [],
 							"typeProperties": {
 								"source": {
-									"type": "AzureSqlSource"
+									"type": "DelimitedTextSource",
+									"storeSettings": {
+										"type": "AzureBlobStorageReadSettings",
+										"recursive": false,
+										"enablePartitionDiscovery": false
+									},
+									"formatSettings": {
+										"type": "DelimitedTextReadSettings"
+									}
 								},
-								"enableStaging": false
+								"sink": {
+									"type": "SqlDWSink",
+									"allowPolyBase": false
+								},
+								"enableStaging": false,
+								"translator": {
+									"type": "TabularTranslator",
+									"mappings": [
+										{
+											"sink": {
+												"name": "Region"
+											}
+										}
+									]
+								}
 							},
 							"inputs": [
 								{
-									"referenceName": "AzureSqlTable1",
+									"referenceName": "DelimitedText1",
+									"type": "DatasetReference",
+									"parameters": {
+										"path": {
+											"value": "@variables('container')",
+											"type": "Expression"
+										},
+										"name": {
+											"value": "@variables('blobName')",
+											"type": "Expression"
+										}
+									}
+								}
+							],
+							"outputs": [
+								{
+									"referenceName": "AzureSynapseAnalyticsTable1",
 									"type": "DatasetReference"
 								}
 							]
@@ -153,7 +192,10 @@
 										"value": null
 									},
 									"recordId": {
-										"value": "@[item().id]",
+										"value": {
+											"value": "@[item().id]",
+											"type": "Expression"
+										},
 										"type": "Int32"
 									}
 								}
