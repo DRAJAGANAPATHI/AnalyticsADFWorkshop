@@ -276,8 +276,7 @@
 		],
 		"variables": {
 			"blobPath": {
-				"type": "String",
-				"defaultValue": "@[item().path]"
+				"type": "String"
 			},
 			"blobName": {
 				"type": "String"
