@@ -83,7 +83,7 @@
 									"dependsOn": [],
 									"userProperties": [],
 									"typeProperties": {
-										"variableName": "blobPath",
+										"variableName": "blobpath",
 										"value": {
 											"value": "@{item().Path}",
 											"type": "Expression"
@@ -96,7 +96,7 @@
 									"dependsOn": [],
 									"userProperties": [],
 									"typeProperties": {
-										"variableName": "blobName",
+										"variableName": "blobname",
 										"value": {
 											"value": "@{item().BlobName}",
 											"type": "Expression"
@@ -309,10 +309,10 @@
 					}
 				],
 				"variables": {
-					"blobPath": {
+					"blobpath": {
 						"type": "String"
 					},
-					"blobName": {
+					"blobname": {
 						"type": "String"
 					},
 					"container": {
