@@ -18,14 +18,8 @@
 		"typeProperties": {
 			"location": {
 				"type": "AzureBlobStorageLocation",
-				"fileName": {
-					"value": "@dataset().name",
-					"type": "Expression"
-				},
-				"container": {
-					"value": "@dataset().path",
-					"type": "Expression"
-				}
+				"fileName": "sample_data_1.csv",
+				"container": "processedmessages"
 			},
 			"columnDelimiter": ",",
 			"escapeChar": "\\",
