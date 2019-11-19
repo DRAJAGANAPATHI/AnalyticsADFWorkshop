@@ -258,7 +258,7 @@
 									},
 									"recordId": {
 										"value": {
-											"value": "@[item().id]",
+											"value": "@{item().RecordId}",
 											"type": "Expression"
 										},
 										"type": "Int32"
