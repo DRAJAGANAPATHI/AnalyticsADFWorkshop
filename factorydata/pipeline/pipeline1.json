@@ -50,7 +50,7 @@
 							"dependsOn": [],
 							"userProperties": [],
 							"typeProperties": {
-								"variableName": "blobPath",
+								"variableName": "blobpath",
 								"value": {
 									"value": "@{item().Path}",
 									"type": "Expression"
