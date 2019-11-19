@@ -23,7 +23,7 @@
 					"type": "Expression"
 				},
 				"container": {
-					"value": "@dataset().name",
+					"value": "@dataset().path",
 					"type": "Expression"
 				}
 			},
